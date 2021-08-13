@@ -9,12 +9,15 @@ print ("Rozpoczęto przetwarzanie MSiG")
 
 for linia in plik.readlines():  
     if "PESEL nr " in linia:
-        
         linia_nowa = linia[linia.find("PESEL nr ")+9:linia.find("PESEL nr ")+20]
         plik_nowy.write(linia_nowa)
         plik_nowy.write("\n")
     elif "PESEL: " in linia:
         linia_nowa = linia[linia.find("PESEL")+8:linia.find("PESEL")+19]
+        plik_nowy.write(linia_nowa)
+        plik_nowy.write("\n")
+    elif "PESEL numer " in linia:
+        linia_nowa = linia[linia.find("PESEL numer ")+12:linia.find("PESEL numer ")+23]
         plik_nowy.write(linia_nowa)
         plik_nowy.write("\n")
     elif "PESEL" in linia:
