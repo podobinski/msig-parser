@@ -1,9 +1,12 @@
 import os
 import datetime
+from datetime import datetime
+
+
+start = datetime.now()
 
 plik = open("monitor-export.txt")
 plik_nowy = open("monitor-etap1.txt", "w+")
-linia_nowa = ""
 
 print ("Rozpoczęto przetwarzanie MSiG")
 
@@ -30,6 +33,9 @@ for linia in plik.readlines():
 plik_nowy.close()                       
 plik.close()
 print ("Zakończono przetwarzanie MSiG")
+koniec = datetime.now()
+
+print ("Przetwarzanie zajęło: "+str(koniec-start))
 input ("Naciśnij dowolny przycisk aby zakończyć")
 
 #wersja 0.001
